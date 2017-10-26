@@ -18,8 +18,12 @@ def mkDict(keys, values):
 
 # Main
 # The two following tuples will be taken as input by the mkDict function
-ids=('a','b', 'c', 'd', 'e', 'f')
-mywords=('Tim', 'Sara', 'flew', 'space', 'pair', 'slippers')
+def main():
+	ids=('a','b', 'c', 'd', 'e', 'f')
+	mywords=('Tim', 'Sara', 'flew', 'space', 'pair', 'slippers')
 
-# Print the distionary
-print(mkDict(ids,mywords))
+	# Print the distionary
+	print(mkDict(ids,mywords))
+
+if __name__ == "__main__":
+	main()
