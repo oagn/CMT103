@@ -45,6 +45,21 @@ class Queue(Container):
         return "<QUEUE #TAIL{}>".format(super(Queue, self).__str__())
 
 
+def play_stack_Queue(st):
+    S = Stack()
+    Q = Queue()
+    for c in st:
+        if c not in "aoeui":
+            S.push(c)
+        else:
+            Q.enqueue(c)
+    ret = ""
+    for i in range(max(S.size, Q.size)):
+        if not S.isEmpty:
+            ret+=S.pop()
+        if not Q.isEmpty:
+            ret+=Q.dequeue()
+    return ret
 
 if __name__=='__main__':
     alist = [1, 2, 3, 4, 5]
@@ -67,3 +82,6 @@ if __name__=='__main__':
     print("Dequeue the items:")
     while not q.isEmpty:
         print(q.dequeue(), end=" ")
+
+    print("\n\nTesting the play_stack_Queue function: ")
+    print(play_stack_Queue("Stack and Queue"))
