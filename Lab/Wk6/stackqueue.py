@@ -18,10 +18,12 @@ class Container(object):
         
 class Stack(Container):
     def push(self, element):
-        pass
+        self.elements.append(element)
+        
 
     def pop(self):
-        pass
+        return self.elements.pop()
+        
 
     def top(self):
         return self.elements[self.size-1]
@@ -31,16 +33,17 @@ class Stack(Container):
 
 class Queue(Container):
     def enqueue(self, element):
-        pass
+        self.elements.insert(0,element)
 
     def dequeue(self):
-        pass
+        return self.elements.pop()
 
     def front(self):
         return self.elements[self.size-1]
 
     def __str__(self):
         return "<QUEUE #TAIL{}>".format(super(Queue, self).__str__())
+
 
 
 if __name__=='__main__':
