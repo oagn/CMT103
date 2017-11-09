@@ -11,7 +11,18 @@ class SortedStack(Stack):
     def push(self, val):
         ''' after the item val is pushed in, the stack (self.s)
         is still sorted in a decending order (top to bottom).'''
-        pass                
+        SS = Stack()
+        Larger = True
+        if self.s.isEmpty or (val >= self.s.top()):
+          self.s.push(val)  
+        else: 
+          while Larger:
+            SS.push(self.s.pop())
+            if (self.s.isEmpty or val >= self.s.top()):
+              Larger = False
+              self.s.push(val)
+          while not SS.isEmpty:
+            self.s.push(SS.pop())
 
     def pop(self):
         return self.s.pop()
