@@ -1,9 +1,15 @@
 # flattened_nested_list.py
 # Week 8, task 2
 
-def flattened_nested_list(nested, outList):
-'''Input: Nested list'''
-'''Output: Flattened nested list'''
+def flatten_nested_list(nested, outList):
+	'''Input: Nested list'''
+	'''Output: Flattened nested list'''
+	for i in range(len(nested)):
+	# Condition for recursion, if the element is a list
+		if type(nested[i]) == list:
+			flatten_nested_list(nested[i], outList)
+		else:
+			outList.append(nested[i])
 	return
 
 def main():
