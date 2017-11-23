@@ -3,8 +3,8 @@
 def print_nested_list(nested):
 	'''Input: nested list'''
 	'''Output: the function prints each element in the nested list in the order they appear'''
-	# Condition for recursion - 
 	for i in range(len(nested)):
+		# Condition for recursion, if the element is a list
 		if type(nested[i]) == list:
 			print_nested_list(nested[i])
 		else:
