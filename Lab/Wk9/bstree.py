@@ -125,6 +125,13 @@ class BSTree(object):
     def height(self):
         return self.__height(self.root)
 
+    def __getMin(self, subroot):
+
+        return
+
+    def getMin(self):
+        return self.__getMin(self.root)
+
 
 
 if __name__ == '__main__':
