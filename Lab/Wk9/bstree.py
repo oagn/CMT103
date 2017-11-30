@@ -91,7 +91,9 @@ class BSTree(object):
         return self.__searchR(self.root, e)
 
 
+    # Unknown make s a list from the BST, in-order traversal
     def __unknown(self, subroot, alist):
+        ''' Makes a list of the nodes in the tree, in-order traversal'''
         if not subroot:
             return
         if subroot.isleaf:
@@ -110,7 +112,14 @@ class BSTree(object):
         return retlist
 
     def __height(self, subroot):
-        pass
+        if subroot.isleaf:
+            return 1
+        elif not subroot.hasleftchild:
+            return self.__height(subroot.rightchild)
+        elif not subroot.hasrightchild:
+            return self.__height(subroot.leftchild)
+        else: 
+            return max(self.__height(subroot.leftchild),self.__height(subroot.rightchild))+1
 
     #Please implement
     def height(self):
@@ -124,6 +133,7 @@ if __name__ == '__main__':
     bstree = BSTree()
     for item in elements:
         bstree.add(item)
-    print(bstree)
-    unknown=bstree.unknown()
-    print(unknown)
+    print(bstree)
+
+
+    print('The height of the tree is:',bstree.height())
