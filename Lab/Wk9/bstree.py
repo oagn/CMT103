@@ -126,8 +126,10 @@ class BSTree(object):
         return self.__height(self.root)
 
     def __getMin(self, subroot):
-
-        return
+        if subroot.hasleftchild:
+            return self.__getMin(subroot.leftchild)
+        else:
+            return subroot.element
 
     def getMin(self):
         return self.__getMin(self.root)
@@ -144,3 +146,4 @@ if __name__ == '__main__':
 
 
     print('The height of the tree is:',bstree.height())
+    print("The smallest element is:", bstree.getMin())
